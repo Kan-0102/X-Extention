@@ -1,0 +1,27 @@
+{
+  "manifest_version": 3,
+  "name": "Tweet Helper (Step1)",
+  "version": "0.3.4",
+  "description": "Retweet/引用RT時にツイート本文を取得して日本語正規化＋形態素解析",
+  "permissions": [],
+  "host_permissions": [
+    "https://x.com/*"
+  ],
+  "content_scripts": [
+    {
+      "matches": [
+        "https://x.com/*"
+      ],
+      "js": ["vendor/kuromoji/build/kuromoji.js", "content_x.js"],
+      "run_at": "document_idle"
+    }
+  ],
+  "web_accessible_resources": [
+    {
+      "resources": [
+        "vendor/kuromoji/dict/*"
+      ],
+      "matches": ["<all_urls>"]
+    }
+  ]
+}
