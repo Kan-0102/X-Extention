@@ -1,0 +1,10 @@
+{
+  "allowPos": ["名詞", "動詞", "形容詞"],
+  "mergeNoun": true,        
+  "lemmaVerb": true,       
+  "maxReturn": 7,             
+  "baseScore": { "名詞": 1.2, "動詞": 1.0, "形容詞": 0.8 },
+  "positionBoost": { "hashtag": 0.5, "begin": 0.2 },
+  "cooccurWindow": 8,      
+  "topicHitBonus": 2   
+}
