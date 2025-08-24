@@ -1,8 +1,8 @@
 {
   "manifest_version": 3,
-  "name": "Tweet Helper (Step2)",
+  "name": "Tweet Helper (Step4)",
   "version": "0.4.1",
-  "description": "Retweet/引用RT時にツイート本文を取得して形態素解析・重要語句検出",
+  "description": "Retweet/引用RT時にツイート本文を取得して形態素解析->検索し、上位三件のURLを取得",
   "permissions": [],
   "host_permissions": [
     "https://x.com/*"
@@ -12,7 +12,12 @@
       "matches": [
         "https://x.com/*"
       ],
-      "js": ["vendor/kuromoji/build/kuromoji.js", "extractor.js","content_x.js"],
+      "js": [
+        "vendor/kuromoji/build/kuromoji.js", 
+        "extractor.js", 
+        "query_builder.js",
+        "content_x.js"
+      ],
       "run_at": "document_idle"
     }
   ],
@@ -20,7 +25,8 @@
     {
       "resources": [
         "vendor/kuromoji/dict/*",
-        "assets/stopwords.json"
+        "assets/stopwords.json",
+        "assets/synonyms.json"
       ],
       "matches": ["<all_urls>"]
     }

@@ -102,4 +102,6 @@
 
   // グローバル公開
   window.Step2Extractor = { init, run };
+
+
 })();
